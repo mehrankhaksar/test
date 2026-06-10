@@ -75,12 +75,12 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.24 0.02 260);
 
-  /* Primary (#0B1F3A) */
+  /* Primary */
   --primary: oklch(0.23 0.04 260);
   --primary-foreground: oklch(1 0 0);
 
   /* Secondary */
-  --secondary: oklch(1 0 0);
+  --secondary: oklch(0.97 0.004 240);
   --secondary-foreground: oklch(0.2393 0.0581 256.66);
 
   /* Tertiary */
@@ -88,7 +88,7 @@
   --tertiary-foreground: oklch(0.75 0.18 60);
 
   /* Muted */
-  --muted: oklch(1 0 0);
+  --muted: oklch(0.97 0.004 240);
   --muted-foreground: oklch(0.55 0.015 240);
 
   /* Accent (blue energy) */
