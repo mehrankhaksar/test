@@ -1,17 +1,18 @@
 import Footer from "./components/layout/Footer";
 import Navbar from "./components/layout/Navbar";
+import SavingTipsSection from "./components/sections/SavingTipsSection";
 import HeroSection from "./components/sections/HeroSection";
 import { DirectionProvider } from "./components/ui/direction";
 
 export default function App() {
   return (
     <DirectionProvider direction="rtl" dir="rtl">
-      <div className="min-h-screen">
+      <main className="min-h-screen">
         <Navbar />
         <HeroSection />
-        <main className="max-w-7xl mx-auto px-5"></main>
+        <SavingTipsSection />
         <Footer />
-      </div>
+      </main>
     </DirectionProvider>
   );
 }

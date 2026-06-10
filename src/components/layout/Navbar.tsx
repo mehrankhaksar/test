@@ -17,6 +17,7 @@ export default function Navbar() {
   return (
     <motion.header
       className="fixed w-full top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md"
+      initial={{ padding: 20 }}
       animate={{
         padding: scrolled ? 10 : 20,
       }}
