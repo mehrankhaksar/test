@@ -1,5 +1,8 @@
 import Logo from "@/assets/images/logo.png";
 import { Button } from "../ui/button";
+import { motion } from "motion/react";
+
+const MotionButton = motion.create(Button);
 
 export default function HeroSection() {
   return (
@@ -16,12 +19,19 @@ export default function HeroSection() {
           کوچک‌ترین تغییر در عادات روزانه ما می‌تواند نقش بزرگی در مدیریت مصرف
           آب و برق داشته باشد.
         </p>
-        <Button
-          className="h-fit py-3.5 px-10 rounded-full font-bold text-base"
+        <MotionButton
+          className="h-fit px-10 py-3.5 rounded-full font-bold text-base"
           asChild
+          whileHover={{
+            y: -3,
+            boxShadow: "0 4px 15px rgba(11, 31, 58, 0.2)",
+          }}
+          transition={{
+            duration: 0.05,
+          }}
         >
           <a href="#">آشنایی با راهکار‌ها</a>
-        </Button>
+        </MotionButton>
       </div>
     </section>
   );

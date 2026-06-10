@@ -1,29 +1,30 @@
-import { useEffect, useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import { useState } from "react";
 
 export default function Navbar() {
+  const { scrollY } = useScroll();
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else if (window.scrollY < 10) {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useMotionValueEvent(scrollY, "change", (current) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (current > previous && current > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
 
   return (
-    <header className="fixed w-full top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md">
-      <div
-        className={`${scrolled ? "p-2.5" : "p-5"} text-center transition-[padding] duration-300`}
-      >
+    <motion.header
+      className="fixed w-full top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-md"
+      animate={{
+        padding: scrolled ? 10 : 20,
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
+      <div className="text-center">
         <h1 className="text-[1.8rem] font-black">به انرژیِ ایران جان بده</h1>
       </div>
-    </header>
+    </motion.header>
   );
 }
