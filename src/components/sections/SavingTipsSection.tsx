@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import { motion } from "motion/react";
 
 const savingTips = {
   electricity: [
@@ -117,7 +118,23 @@ const savingTips = {
 export default function SavingTipsSection() {
   return (
     <section className="py-25 px-5 bg-secondary">
-      <div className="text-center container mx-auto">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 50,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          amount: 0.1,
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+        className="text-center container mx-auto"
+      >
         <h3 className="text-[2.5rem] font-bold mb-16">
           راهکارهای طلایی صرفه‌جویی
         </h3>
@@ -181,7 +198,7 @@ export default function SavingTipsSection() {
             </Accordion>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
