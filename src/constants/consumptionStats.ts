@@ -13,7 +13,7 @@ export const consumptionStats = [
   {
     icon: Electricity,
     color: "tertiary",
-    value: "۳٬۶۶۰",
+    value: 3660,
     title: "مصرف سالانه برق هر نفر",
     description: "میانگین جهانی حدود ۳۲۰۰ kWh",
   },

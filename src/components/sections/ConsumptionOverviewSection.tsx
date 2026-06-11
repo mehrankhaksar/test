@@ -3,6 +3,7 @@ import { consumptionStats } from "@/constants/consumptionStats";
 import { motion } from "motion/react";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { cn } from "@/lib/utils";
+import Counter from "../Counter";
 
 export default function ConsumptionOverviewSection() {
   return (
@@ -44,7 +45,7 @@ export default function ConsumptionOverviewSection() {
                       )}
                     />
                     <span className="text-[3.5rem] font-black mb-1.25 leading-none">
-                      {consumptionStat.value}
+                      <Counter value={consumptionStat.value} />
                     </span>
                     <CardTitle className="text-[1.1rem] font-semibold mb-3.75">
                       {consumptionStat.title}
