@@ -14,10 +14,19 @@ export default function ConsumptionOverviewSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.8 }}
           variants={fadeUpVariants}
-          className="mb-16 text-center text-[1.8rem] sm:text-[2.5rem] font-extrabold"
+          className="mb-4 text-center text-[1.8rem] sm:text-[2.5rem] font-extrabold"
         >
           نگاهی به مصرف آب و برق
         </motion.h3>
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+          variants={fadeUpVariants}
+          className="text-muted-foreground text-[1.1rem] font-medium mb-16"
+        >
+          ایران در مقایسه با میانگین جهانی
+        </motion.p>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {consumptionStats.map((consumptionStat, idx) => {
             const Icon = consumptionStat.icon;

@@ -4,6 +4,7 @@ import SavingTipsSection from "./components/sections/SavingTipsSection";
 import HeroSection from "./components/sections/HeroSection";
 import { DirectionProvider } from "./components/ui/direction";
 import ConsumptionOverviewSection from "./components/sections/ConsumptionOverviewSection";
+import BusinessEnergyManagementSection from "./components/sections/BusinessEnergyManagementSection";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <HeroSection />
         <SavingTipsSection />
         <ConsumptionOverviewSection />
+        <BusinessEnergyManagementSection />
         <Footer />
       </main>
     </DirectionProvider>
