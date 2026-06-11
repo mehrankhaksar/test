@@ -3,6 +3,7 @@ import Navbar from "./components/layout/Navbar";
 import SavingTipsSection from "./components/sections/SavingTipsSection";
 import HeroSection from "./components/sections/HeroSection";
 import { DirectionProvider } from "./components/ui/direction";
+import ConsumptionOverviewSection from "./components/sections/ConsumptionOverviewSection";
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Navbar />
         <HeroSection />
         <SavingTipsSection />
+        <ConsumptionOverviewSection />
         <Footer />
       </main>
     </DirectionProvider>
