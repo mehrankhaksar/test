@@ -1,4 +1,7 @@
-import { fadeUpVariants } from "@/animations/variants";
+import {
+  fadeUpVariants,
+  staggerContainerVariants,
+} from "@/animations/variants";
 import { consumptionStats } from "@/constants/consumptionStats";
 import { motion } from "motion/react";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
@@ -27,12 +30,18 @@ export default function ConsumptionOverviewSection() {
         >
           ایران در مقایسه با میانگین جهانی
         </motion.p>
-        <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <motion.ul
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={staggerContainerVariants}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        >
           {consumptionStats.map((consumptionStat, idx) => {
             const Icon = consumptionStat.icon;
 
             return (
-              <li key={idx}>
+              <motion.li key={idx} variants={fadeUpVariants}>
                 <Card className="py-10 px-7.5 ring-0 rounded-[30px] border border-[#f8f8f8] shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all relative duration-300 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5">
                   <div
                     className={cn(
@@ -64,10 +73,10 @@ export default function ConsumptionOverviewSection() {
                     </CardDescription>
                   </CardHeader>
                 </Card>
-              </li>
+              </motion.li>
             );
           })}
-        </ul>
+        </motion.ul>
       </div>
     </section>
   );

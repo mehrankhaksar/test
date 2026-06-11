@@ -13,6 +13,9 @@ import {
   staggerContainerVariants,
 } from "@/animations/variants";
 
+const MotionAccordion = motion.create(Accordion);
+const MotionAccordionItem = motion.create(AccordionItem);
+
 export default function SavingTipsSection() {
   return (
     <section className="py-25 px-5 bg-secondary">
@@ -40,9 +43,17 @@ export default function SavingTipsSection() {
                 ۱۰ راهکار مدیریت برق
               </h4>
             </div>
-            <Accordion className="space-y-3.75" type="multiple">
+            <MotionAccordion
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={staggerContainerVariants}
+              className="space-y-3.75"
+              type="multiple"
+            >
               {savingTips.electricity.map((item, index) => (
-                <AccordionItem
+                <MotionAccordionItem
+                  variants={fadeUpVariants}
                   className="bg-white border-b-0! rounded-[15px] shadow-[0_4px_15px_rgba(0,0,0,0.03)] border-tertiary-foreground"
                   key={index}
                   value={`electric-${index}`}
@@ -58,9 +69,9 @@ export default function SavingTipsSection() {
                   <AccordionContent className="text-start py-4.5 px-6.25 text-[0.95rem] leading-[1.9]">
                     {item.content}
                   </AccordionContent>
-                </AccordionItem>
+                </MotionAccordionItem>
               ))}
-            </Accordion>
+            </MotionAccordion>
           </motion.div>
           <motion.div variants={fadeUpVariants}>
             <div className="flex justify-center items-center gap-2.5 pb-3.75 mb-6.25 border-b text-accent-foreground border-[#c3e9f8]">
@@ -69,9 +80,17 @@ export default function SavingTipsSection() {
                 ۱۰ راهکار مدیریت آب
               </h4>
             </div>
-            <Accordion className="space-y-3.75" type="multiple">
+            <MotionAccordion
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.15 }}
+              variants={staggerContainerVariants}
+              className="space-y-3.75"
+              type="multiple"
+            >
               {savingTips.water.map((item, index) => (
-                <AccordionItem
+                <MotionAccordionItem
+                  variants={fadeUpVariants}
                   className="bg-white border-b-0! rounded-[15px] shadow-[0_4px_15px_rgba(0,0,0,0.03)] border-accent-foreground"
                   key={index}
                   value={`water-${index}`}
@@ -87,9 +106,9 @@ export default function SavingTipsSection() {
                   <AccordionContent className="text-start py-4.5 px-6.25 text-[0.95rem] leading-[1.9]">
                     {item.content}
                   </AccordionContent>
-                </AccordionItem>
+                </MotionAccordionItem>
               ))}
-            </Accordion>
+            </MotionAccordion>
           </motion.div>
         </motion.div>
       </div>
