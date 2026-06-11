@@ -6,8 +6,8 @@ const MotionButton = motion.create(Button);
 
 export default function HeroSection() {
   return (
-    <section className="bg-hero-gradient min-h-screen pt-22.5">
-      <div className="flex flex-col items-center text-center p-5">
+    <section className="bg-hero-gradient h-screen pt-22.5">
+      <div className="h-full flex flex-col justify-center items-center text-center p-5">
         <img className="h-37.5" src={Logo} alt="Logo" />
         <motion.div
           initial={{
@@ -23,7 +23,7 @@ export default function HeroSection() {
             delay: 0.15,
           }}
         >
-          <h2 className="mb-6.25 font-bold text-[3.5rem] tracking-[-1px] leading-[1.2]">
+          <h2 className="mb-6.25 font-bold text-[2rem] sm:text-[3.5rem] tracking-[-1px] leading-[1.2]">
             آینده‌ای روشن،
             <br />
             با مصرفی هوشمند

@@ -14,7 +14,7 @@ export default function ConsumptionOverviewSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.8 }}
           variants={fadeUpVariants}
-          className="mb-16 text-center text-[2.5rem] font-bold"
+          className="mb-16 text-center text-[1.8rem] sm:text-[2.5rem] font-extrabold"
         >
           نگاهی به مصرف آب و برق
         </motion.h3>

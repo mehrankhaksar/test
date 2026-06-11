@@ -22,7 +22,7 @@ export default function SavingTipsSection() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.8 }}
           variants={fadeUpVariants}
-          className="mb-16 text-center text-[2.5rem] font-bold"
+          className="mb-16 text-center text-[1.8rem] sm:text-[2.5rem] font-extrabold"
         >
           راهکارهای طلایی صرفه‌جویی
         </motion.h3>
@@ -30,7 +30,7 @@ export default function SavingTipsSection() {
           className="grid gap-10 lg:grid-cols-2"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={staggerContainerVariants}
         >
           <motion.div variants={fadeUpVariants}>
@@ -47,7 +47,7 @@ export default function SavingTipsSection() {
                   key={index}
                   value={`electric-${index}`}
                 >
-                  <AccordionTrigger className="py-4.5 px-6.25 no-underline! items-center cursor-pointer hover:bg-[#fafafa]">
+                  <AccordionTrigger className="text-start py-4.5 px-6.25 no-underline! items-center cursor-pointer hover:bg-[#fafafa]">
                     <div className="flex items-center">
                       <span className="size-8 text-tertiary-foreground bg-tertiary flex justify-center items-center shrink-0 rounded-[8px] ml-3.75">
                         <Electricity className="size-5!" />
@@ -76,7 +76,7 @@ export default function SavingTipsSection() {
                   key={index}
                   value={`water-${index}`}
                 >
-                  <AccordionTrigger className="py-4.5 px-6.25 no-underline! items-center cursor-pointer hover:bg-[#fafafa]">
+                  <AccordionTrigger className="text-start py-4.5 px-6.25 no-underline! items-center cursor-pointer hover:bg-[#fafafa]">
                     <div className="flex items-center">
                       <span className="size-8 text-accent-foreground bg-accent flex justify-center items-center shrink-0 rounded-[8px] ml-3.75">
                         <Electricity className="size-5!" />
